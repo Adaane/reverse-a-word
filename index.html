@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reverse a String</title>
+</head>
+<body>
+    <div>
+        <h1>Put a sentence here </h1>
+        <input type="text">
+    </div>
+    <div>
+        <h1>Your sentence reverse</h1>
+        <p class="reverseResult"></p>
+    </div>
+
+    <script>
+    var input = document.querySelector('input');
+    var reverseResult = document.querySelector('.reverseResult');
+
+    // Ecouter l'evenement du input
+    input.addEventListener('change', function(event){
+    // attraper le mot dans le input
+        if (event.target.value) {
+            var word = event.target.value;
+            reverseResult.innerHTML += reverseWord(word);
+        } else {
+            reverseResult.innerHTML = "";
+        }
+
+    })
+
+    // Changer l'ordre des lettres dans le mots
+    var reverseWord = function(word) {
+        var tab = word.split('');
+        var newWord = [];
+        for (var i = tab.length ; i >= 0 ; i--) {
+            newWord.push(tab[i]);
+        }
+        newWord = newWord.join('');
+        return newWord;
+    }
+
+
+    
+    </script>
+</body>
+</html>
